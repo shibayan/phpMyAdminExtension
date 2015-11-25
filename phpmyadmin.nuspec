@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>phpmyadmin</id>
+        <version>4.5.2</version>
+        <title>phpMyAdmin</title>
+        <authors>The phpMyAdmin Project</authors>
+        <owners>shibayan</owners>
+        <licenseUrl>https://github.com/phpmyadmin/phpmyadmin/blob/master/LICENSE</licenseUrl>
+        <projectUrl>http://www.phpmyadmin.net/</projectUrl>
+        <iconUrl>http://f.st-hatena.com/images/fotolife/s/shiba-yan/20140609/20140609121435.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.</description>
+        <copyright>The phpMyAdmin Project</copyright>
+        <tags>mysql</tags>
+    </metadata>
+    <files>
+        <file src="**" target="content" />
+    </files>
+</package>
