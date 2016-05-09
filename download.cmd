@@ -1,7 +1,7 @@
 @echo off
 
 SET PATH=%PATH%;C:\Program Files\Git\usr\bin
-SET VERSION=4.5.5
+SET VERSION=4.6.1
 
 rd /S /Q content
 
