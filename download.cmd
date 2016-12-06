@@ -1,9 +1,9 @@
 @echo off
 
 SET PATH=%PATH%;C:\Program Files\Git\usr\bin
-SET VERSION=4.6.4
+SET VERSION=4.6.5.2
 
-rd /S /Q content
+rd /S /Q content > nul
 
 curl -O https://files.phpmyadmin.net/phpMyAdmin/%VERSION%/phpMyAdmin-%VERSION%-all-languages.zip
 
