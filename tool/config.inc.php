@@ -41,6 +41,12 @@ foreach ($_SERVER as $key => $value) {
     /* Select mysql if your server does not have mysqli */
     $cfg['Servers'][$i]['extension'] = 'mysqli';
     $cfg['Servers'][$i]['AllowNoPassword'] = false;
+
+    /* for Azure Database for MySQL */
+    if (strpos($cfg['Servers'][$i]['host'], "mysql.database.azure.com") !== false) {
+        $cfg['Servers'][$i]['ssl'] = true;
+        $cfg['Servers'][$i]['ssl_verify'] = false;
+    }
 }
 
 // Servers not found

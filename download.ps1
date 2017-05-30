@@ -1,4 +1,4 @@
-﻿$version = "4.6.6"
+﻿$version = "4.7.1"
 
 Remove-Item ".\content" -Force -Recurse > $null
 
