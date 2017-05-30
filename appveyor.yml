@@ -9,7 +9,8 @@ init:
 
 build_script:
   - curl -LO https://files.phpmyadmin.net/phpMyAdmin/%APPVEYOR_REPO_TAG_NAME%/phpMyAdmin-%APPVEYOR_REPO_TAG_NAME%-all-languages.zip
-  - 7z x phpMyAdmin-%APPVEYOR_REPO_TAG_NAME%-all-languages.zip -o./content
+  - 7z x phpMyAdmin-%APPVEYOR_REPO_TAG_NAME%-all-languages.zip
+  - mv .\phpMyAdmin-%APPVEYOR_REPO_TAG_NAME%-all-languages .\content
   - cp .\tool\config.inc.php .\content\config.inc.php
   - ps: (Get-Content ".\content\libraries\Header.php").Replace("no-referrer", "origin") | Set-Content ".\content\libraries\Header.php"
   - nuget.exe pack .\phpmyadmin.nuspec -BasePath .\content -OutputDirectory .\
