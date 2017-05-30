@@ -1,0 +1,18 @@
+version: "{build}"
+
+skip_non_tags: true
+
+image: Visual Studio 2015
+
+init:
+  - git config --global core.autocrlf input
+
+build_script:
+  - curl -LO https://files.phpmyadmin.net/phpMyAdmin/%APPVEYOR_REPO_TAG_NAME%/phpMyAdmin-%APPVEYOR_REPO_TAG_NAME%-all-languages.zip
+  - 7z x phpMyAdmin-%APPVEYOR_REPO_TAG_NAME%-all-languages.zip -o./content
+  - cp .\tool\config.inc.php .\content\config.inc.php
+  - ps: (Get-Content ".\content\libraries\Header.php").Replace("no-referrer", "origin") | Set-Content ".\content\libraries\Header.php"
+  - nuget.exe pack .\phpmyadmin.nuspec -BasePath .\content -OutputDirectory .\
+
+artifacts:
+  - path: build\*.nupkg
