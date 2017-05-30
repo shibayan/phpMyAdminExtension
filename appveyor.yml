@@ -16,4 +16,4 @@ build_script:
   - nuget.exe pack .\phpmyadmin.nuspec -BasePath .\content -OutputDirectory .\
 
 artifacts:
-  - path: build\*.nupkg
+  - path: .\*.nupkg
